@@ -8,7 +8,7 @@ local sleep = function(seconds)
 end
 
 gpio.setmode(gpio.BOARD)
-local pin = 29
+local pin = 21
 
 gpio.setup{
    channel=pin, 
