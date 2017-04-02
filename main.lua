@@ -1,6 +1,6 @@
 -- Load some default values for our rectangle.
 function love.load()
-	love.physics.setMeter(64);
+	love.physics.setMeter(64)
 	world = love.physics.newWorld(0, 9.81*64, true)
 
 	objects = {} -- table to hold all our physical objects
@@ -48,6 +48,11 @@ end
 
 function love.update(dt)
 	world:update(dt) --this puts the world into motion
+
+	-- hit escape to kill the game!
+	if love.keyboard.isDown("escape") then
+        love.event.quit()
+    end
 
 	--here we are going to create some keyboard events
 	if love.keyboard.isDown("right") then --press the right arrow key to push the ball to the right
