@@ -13,7 +13,7 @@ local pin = 21
 gpio.setup{
    channel=pin, 
    direction=gpio.IN, 
-   pull_up_down = gpio.PUD_DOWN,
+   pull_up_down = gpio.PUD_UP,
 }
 
 local secs=15  -- total runtime in seconds
@@ -21,7 +21,7 @@ local int=0.1  -- interval in seconds
 
 for i = 1, (secs/int) do
    local state = gpio.input(pin)
-   if state==gpio.LOW then
+   if state==gpio.HIGH then
       print(i*int)
    else
       print("Button pressed!")
